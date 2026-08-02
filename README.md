@@ -294,6 +294,9 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 </div>
 
+<div align="center">
+<img src="assets/profiling.png" alt="Proflling" width="1000"/>
+</div>
 
 <br/>
 
@@ -312,6 +315,8 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 - Uses only a few basic telecom services.
 - Lowest monthly usage and spending.
 - Limited adoption of connectivity and value-added services.
+- wireless (2%), voice mail (8%), caller ID (16%), e-billing (35%).
+
 
 **Behaviour:** Entry-level customers with minimal engagement.
 
@@ -437,16 +442,41 @@ Apriori + association rule mining on the 13 service columns revealed that **tele
 **6. Multiline is a standalone service** with weak associations to everything else. → *Needs targeted marketing, not bundling.*
 </details>
 
-### 🎯 Strategic Recommendations
+---
 
-| Priority | Segment | Recommended Action | Business Rationale |
-|:---:|---|---|---|
-| 1 | 🔵 VIP Customers (3%) | Dedicated account management, proactive check-ins, exclusive early access | A single VIP customer carries ~7.7× the loyalty value of an average customer |
-| 2 | 🟡 Value-Added Adopters (20%) | Targeted wireless/internet bundle offer | Highest-probability conversion audience — they already say yes to add-ons |
-| 3 | 🟢 Wireless & Tech Enthusiasts (17%) | 12–18 month loyalty incentive / contract extension | Converts high usage into high tenure before the churn window opens |
-| 4 | 🟠 Basic Users (40%) | Low-friction entry bundles, 1–2 service upsells | Largest segment — even small % gains outweigh large gains elsewhere |
-| 5 | 🟠 Long-Tenure Traditional (10%) | Education-led digital migration, not a sales push | Preserves loyalty while expanding revenue per customer |
-| 6 | 🟢 Heavy Users (10%) | Premium bundles, early access to new products | Protects and extends the segment already generating the most revenue |
+## 🧠 Strategic Insights
+
+The customer segmentation analysis reveals six distinct behavioural groups with significantly different demographic profiles, service adoption patterns, and revenue potential — each pointing to a different lever the business can pull.
+
+### 📈 Revenue Growth
+**KM6_6 – Heavy Users (10%)** represent the strongest opportunity for revenue growth, with the highest service adoption (11.08 services) and highest monthly usage ($158.60) of any segment. Premium service bundles and new product launches should primarily target this group.
+
+### 🛡️ Customer Retention
+**KM6_5 – Premium Loyal Customers (3%)** contribute disproportionately high customer value despite representing only a small share of the base — a loyalty score **7.7× the overall average**. Retaining these customers should remain a top strategic priority; losing even one is a measurable revenue event.
+
+### 🔗 Cross-Selling Opportunities
+**KM6_2 – Connected Digital Customers (17%)** and **KM6_4 – Communication Service Users (20%)** together represent 37% of the base with strong potential for additional service adoption through targeted cross-selling and bundled offerings — both segments already show high adoption behaviour, just in different service categories.
+
+### 🌐 Digital Migration
+**KM6_3 – Traditional Long-Term Customers (10%)** continue to rely heavily on conventional telecom services, with wireless and internet adoption under 15%. Gradual migration toward digital and connectivity services can increase their long-term value while preserving the loyalty this segment already has.
+
+### 🌱 Customer Development
+**KM6_1 – Basic Customers (40%)** represent the largest segment but currently generate the lowest value per customer. Affordable bundled plans and introductory offers can encourage gradual service adoption and materially improve customer lifetime value — this is the single largest growth lever in the entire base.
+
+---
+
+# 🎯 Implementation Strategy
+
+| Priority | Customer Segment | Business Objective | Recommended Strategy | Why It Matters |
+|:---:|---|---|---|---|
+| 1 | 🔵 **Premium Loyal Customers (3%)** | Customer retention | Dedicated account management, proactive check-ins, exclusive early access, VIP support and personalized offers | A single customer here carries ~7.7× the loyalty value of an average customer — losing one is a measurable revenue event |
+| 2 | 🟡 **Communication Service Users (20%)** | Upsell connectivity services | Bundle communication features (Toll-Free, Caller ID, Call Waiting, Forwarding, Conference) with Internet and Wireless packages | Highest-probability conversion audience in the base — they already say yes to add-ons, just not digital ones yet |
+| 3 | 🟢 **Connected Digital Customers (17%)** | Increase Average Revenue Per User (ARPU) | Premium digital bundles, device upgrade offers, and new digital services, backed by a 12–18 month loyalty incentive | Converts today's highest usage into tomorrow's highest tenure — before the churn window opens |
+| 4 | 🟠 **Basic Customers (40%)** | Increase service adoption | Affordable entry-level bundles, introductory offers, and personalized cross-selling campaigns | Largest segment in the base — even a small % gain here outweighs large gains anywhere else |
+| 5 | 🟠 **Traditional Long-Term Customers (10%)** | Digital transformation | Education-led migration to Internet and Wireless services through incentives and bundled migration plans, not a hard sell | Preserves deep existing loyalty while gradually expanding revenue per customer |
+| 6 | 🟢 **Heavy Users (10%)** | Revenue maximization | Premium bundles, early access to new services, loyalty rewards, and proactive retention programs | Protects and extends the segment already generating the most revenue for the business today |
+
+> 💡 **Execution note:** service-affinity analysis shows Wireless pulling Pager and Voice Mail adoption together, and the five calling features (Caller ID, Call Waiting, Forwarding, Conferencing, Toll-Free) are almost always adopted as a set — use these exact combinations when building the bundles above rather than marketing services individually.
 
 ---
 
