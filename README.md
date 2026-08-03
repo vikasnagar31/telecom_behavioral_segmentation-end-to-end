@@ -38,8 +38,10 @@
 - [Repository Structure](#-repository-structure)
 - [Dataset](#-dataset)
 - [Methodology](#-methodology)
-- [Customer Segments](#-customer-segments)
-- [Business Insights](#-business-insights-service-affinities--cross-sell-strategy)
+- [Customer Behavioral Characteristics](#-customer-behavioral-characters)
+- [Service Affinities & Cross Selling Strategy](#-business-insights-service-affinities-cross-sell-strategy)
+- [Strategic Insights](#-strategic-insights)
+- [Implementation Strategy](#-implementation-strategy)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Tech Stack](#-tech-stack)
@@ -69,17 +71,15 @@ A telecom operator had ~1,000 active customers and no structured way to understa
 
 ## 🏆 Key Results
 
-<div align="center">
+At a glance, this project delivers:
 
-| 📊 6 | 💰 5.1× | 📈 40% | 🔗 3.07 | 🎯 20% |
-|:---:|:---:|:---:|:---:|:---:|
-| Behavioural segments discovered | Income multiple of the smallest, highest-value segment vs. average | Of the base sits in the lowest-value segment — the single biggest growth lever | Best association-rule **lift** (Wireless), the strongest cross-sell signal in the data | Of customers are "primed" cross-sell candidates already adopting related services |
+- 👥 **6 customer behavioural segments** — from Basic Customers to Premium Loyal Customers, each profiled by income, tenure, usage, and service adoption ([see segments](#-customer-behavioral-characteristics))
+- 🔗 **Service affinities & associations** — which services get adopted together, mined via Apriori (e.g. Wireless → Voice Mail/Pager, Lift = 3.07) ([see business insights](#-business-insights-service-affinities-cross-sell-strategy))
+- 🧠 **Strategic insights** — what each segment means for revenue growth, retention, cross-sell, and digital migration ([see strategic insights](#-strategic-insights))
+- 🎯 **Implementation strategy** — a prioritized, segment-by-segment action plan tied to business objectives ([see implementation strategy](#-implementation-strategy))
+- ⚙️ **automated end-to-end pipeline**: retrain on new data with one command, score new customers with another, and regenerate all business reports with a third — no notebook required after day one.
 
-</div>
-
-- **PCA was tried and deliberately rejected** — it only explained ~55–60% of variance and destroyed business interpretability, so 7 hand-engineered behavioural features were used instead (see [Methodology](#-methodology)).
-- **K-Means (k=6)** outperformed Agglomerative Clustering and DBSCAN on balance and interpretability, despite DBSCAN's higher raw silhouette score (DBSCAN dumped 98% of customers into a single cluster — not usable for segmentation).
-- The full pipeline is **automated end-to-end**: retrain on new data with one command, score new customers with another, and regenerate all business reports with a third — no notebook required after day one.
+*(Full detail on each of the above is in the sections below.)*
 
 ---
 
@@ -320,7 +320,6 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 **Behaviour:** Entry-level customers with minimal engagement.
 
----
 
 ### 🟢 KM6_2 – Connected Digital Customers (17%)
 
@@ -339,8 +338,7 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 **Behaviour:** Technology-oriented customers willing to adopt multiple digital services.
 
----
-
+ 
 ### 🟠 KM6_3 – Traditional Long-Term Customers (10%)
 
 | Metric | Value |
@@ -358,8 +356,7 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 **Behaviour:** Loyal but traditional customers who have been slow to adopt modern telecom services.
 
----
-
+ 
 ### 🟡 KM6_4 – Communication Service Users (20%)
 
 | Metric | Value |
@@ -376,8 +373,7 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 **Behaviour:** Customers focused primarily on communication-related services.
 
----
-
+ 
 ### 🔵 KM6_5 – Premium Loyal Customers (3%)
 
 | Metric | Value |
@@ -395,8 +391,7 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
 
 **Behaviour:** Small but extremely valuable customer segment with strong purchasing power and long-term loyalty.
 
----
-
+ 
 ### 🟢 KM6_6 – Heavy Users (10%)
 
 | Metric | Value |
@@ -415,7 +410,61 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
  
 ---
 
-## 💡 Business Insights: Service Affinities & Cross-Sell Strategy
+## 💡 Service Affinities & Cross-Sell Strategy
+
+### Key Finding
+
+#### 1️⃣ Wireless acts as the central service in the telecom portfolio.
+- Wireless shows strong relationships with Voice Mail (0.61), Pager (0.66), Internet (0.39), and several calling services.
+- Association Rule Mining also identifies Wireless as the strongest recommended service (**Lift = 3.07, Confidence = 90.96%**).
+
+**Business Insight:** Wireless should be treated as the anchor product for bundled plans and targeted cross-selling campaigns.
+
+
+#### 2️⃣ Calling features are frequently adopted together.
+Strong positive relationships exist among:
+- Caller ID
+- Call Waiting
+- Call Forwarding
+- Conference Calling
+- Toll-Free
+
+Correlation values range between **0.57 and 0.65**, while association rules show confidence levels above **90%**.
+
+**Business Insight:** Instead of promoting these services individually, they should be offered as integrated communication bundles to increase adoption.
+
+ 
+#### 3️⃣ Voice Mail and Pager form a strong service combination.
+Both services exhibit:
+- High correlation
+- High association strength (Lift = 2.99 for Pager and 2.69 for Voice)
+
+**Business Insight:** Customers subscribing to one of these services are highly likely to adopt the other, making them excellent candidates for bundled promotions.
+
+ 
+#### 4️⃣ Internet and Equipment services show strong affinity.
+- Correlation between Equipment and Internet = **0.60**
+- Association rules also identify strong relationships between these services.
+
+**Business Insight:** Customers purchasing Internet services should be targeted with Equipment rental offers and related digital services.
+
+ 
+#### 5️⃣ Electronic Billing is closely associated with digital services.
+Electronic Billing demonstrates strong relationships with:
+- Internet
+- Equipment
+- Wireless
+
+**Business Insight:** Promoting e-Billing during digital service activation can improve digital adoption while reducing operational costs.
+
+ 
+#### 6️⃣ Multiline service shows relatively weak associations.
+Compared to other telecom services, Multiline has weaker relationships with most service categories.
+
+**Business Insight:** Multiline appears to satisfy specific customer requirements and may require targeted marketing rather than broad cross-selling campaigns.
+
+ 
+### 🏁 Overall Associations Conclusion
 
 Apriori + association rule mining on the 13 service columns revealed that **telecom services are adopted in groups, not independently.** Three ecosystems emerged:
 
@@ -425,25 +474,10 @@ Apriori + association rule mining on the 13 service columns revealed that **tele
 | ☎️ **Communication Feature Ecosystem** | Toll-Free, Caller ID, Call Waiting, Call Forwarding, Conference Calling |
 | 💻 **Digital Ecosystem** | Internet, Equipment Rental, Electronic Billing |
 
-<details>
-<summary><b>📌 Full key findings</b></summary>
-<br/>
+These findings suggest that bundled offerings and personalized cross-selling strategies are likely to be more effective than promoting individual services. Leveraging these service affinities can improve customer adoption, increase average revenue per customer (ARPU), and strengthen customer retention.
 
-**1. Wireless is the anchor product.** Strong relationships with Voice Mail (0.61), Pager (0.66), and Internet (0.39). Also the strongest recommended service from association rule mining — **Lift = 3.07, Confidence = 90.96%**. → *Anchor every bundle and cross-sell campaign around it.*
-
-**2. Calling features sell as a set.** Caller ID, Call Waiting, Call Forwarding, Conference Calling, and Toll-Free correlate at 0.57–0.65 with confidence >90%. → *Package them together instead of selling individually.*
-
-**3. Voice Mail ↔ Pager is a strong pair.** Lift = 2.99 (Pager) / 2.69 (Voice). → *Prime bundle candidates.*
-
-**4. Internet ↔ Equipment show strong affinity** (correlation 0.60). → *Target Internet subscribers with equipment rental offers.*
-
-**5. E-Billing clusters with digital services** (Internet, Equipment, Wireless). → *Promote e-billing at the point of digital activation — improves adoption and cuts operational cost.*
-
-**6. Multiline is a standalone service** with weak associations to everything else. → *Needs targeted marketing, not bundling.*
-</details>
-
----
-
+ ---
+ 
 ## 🧠 Strategic Insights
 
 The customer segmentation analysis reveals six distinct behavioural groups with significantly different demographic profiles, service adoption patterns, and revenue potential — each pointing to a different lever the business can pull.
@@ -465,7 +499,7 @@ The customer segmentation analysis reveals six distinct behavioural groups with 
 
 ---
 
-# 🎯 Implementation Strategy
+## 🎯 Implementation Strategy
 
 | Priority | Customer Segment | Business Objective | Recommended Strategy | Why It Matters |
 |:---:|---|---|---|---|
@@ -484,12 +518,12 @@ The customer segmentation analysis reveals six distinct behavioural groups with 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-vikas>/telecom_segmentation.git
+git clone https://github.com/vikasnagar31>/telecom_segmentation.git
 cd telecom_segmentation
 
 # 2. Create and activate a virtual environment
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv\Scripts\activate
 
 # 3. Install dependencies
 pip install -r requirements.txt
@@ -541,7 +575,7 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ## 👤 Author / Contact
 
-**[Vikas Nagar]**
+**Vikas Nagar**
 📧 [Email](mailto:nagarvikas2003@gmail.com) · 💼 [LinkedIn]([https://linkedin.com/in/your-profile](https://www.linkedin.com/in/vikas31/)) ·
 
 <div align="center">
