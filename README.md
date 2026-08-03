@@ -39,7 +39,7 @@
 - [Dataset](#-dataset)
 - [Methodology](#-methodology)
 - [Customer Behavioral Characteristics](#-customer-behavioral-characteristics)
-- [Service Affinities & Cross Selling Strategy](#-service-affinities-&-cross-sell--strategy)    
+- [Service Affinities & Cross Selling Strategy](#-service-affinities-&-cross-selling-strategy)    
 - [Strategic Insights](#-strategic-insights)
 - [Implementation Strategy](#-implementation-strategy)
 - [Installation](#-installation)
@@ -410,7 +410,7 @@ Ran **Apriori + association rules** (`mlxtend`) on the 13 binary service columns
  
 ---
 
-## 💡 Service Affinities & Cross-Sell Strategy
+## 💡 Service Affinities & Cross Selling Strategy
 
 ### Key Finding
 
@@ -576,7 +576,7 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 ## 👤 Author / Contact
 
 **Vikas Nagar**
-📧 [Email](mailto:nagarvikas2003@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/vikas31/)) ·
+📧 [Email](mailto:nagarvikas2003@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/vikas31/) ·
 
 <div align="center">
 <sub>⭐ If this project was useful or interesting, consider giving it a star!</sub>
