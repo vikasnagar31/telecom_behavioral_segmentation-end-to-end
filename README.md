@@ -56,10 +56,18 @@
 ## 🎬 Demo
 
 <div align="center">
-<img src="assets/app%20demo.gif" alt="Streamlit app demo" width="1000"/>
-<sub>Upload a customer CSV → get instant segments, KPIs, and business charts and download reports</sub>
-</div>
+  <img src="assets/app%20demo.gif" alt="Streamlit app demo" width="1000"/>
 
+  <br><br>
+
+  <a href="https://teleinsight.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Launch%20Live%20App-Streamlit-red?style=for-the-badge" alt="Launch App"/>
+  </a>
+  <br><br>
+  <sub>
+    Upload a customer CSV → Get instant customer segments, KPIs, interactive business dashboards, and downloadable reports.
+  </sub>
+</div>
  
 ---
 
