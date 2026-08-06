@@ -39,13 +39,12 @@
 - [Dataset](#-dataset)
 - [Methodology](#-methodology)
 - [Customer Behavioral Characteristics](#-customer-behavioral-characteristics)
-- [Service Affinities & Cross Selling Strategy](#-service-affinities-&-cross-selling-strategy)    
+- [Service Affinities & Cross Selling Strategy](#-service-affinities--cross-selling-strategy)    
 - [Strategic Insights](#-strategic-insights)
 - [Implementation Strategy](#-implementation-strategy)
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Tech Stack](#-tech-stack)
-- [Limitations](#-limitations)
 - [License](#-license)
 - [Author / Contact](#-author--contact)
 
@@ -82,7 +81,7 @@ A telecom operator had ~1,000 active customers and no structured way to understa
 At a glance, this project delivers:
 
 - 👥 **6 customer behavioural segments** — from Basic Customers to Premium Loyal Customers, each profiled by income, tenure, usage, and service adoption ([see segments](#-customer-behavioral-characteristics))
-- 🔗 **Service affinities & associations** — which services get adopted together, mined via Apriori (e.g. Wireless → Voice Mail/Pager, Lift = 3.07) ([see business insights](#-business-insights-service-affinities-cross-sell-strategy))
+- 🔗 **Service affinities & associations** — which services get adopted together, mined via Apriori (e.g. Wireless → Voice Mail/Pager, Lift = 3.07) ([see business insights](#-service-affinities--cross-selling-strategy))
 - 🧠 **Strategic insights** — what each segment means for revenue growth, retention, cross-sell, and digital migration ([see strategic insights](#-strategic-insights))
 - 🎯 **Implementation strategy** — a prioritized, segment-by-segment action plan tied to business objectives ([see implementation strategy](#-implementation-strategy))
 - ⚙️ **automated end-to-end pipeline**: retrain on new data with one command, score new customers with another, and regenerate all business reports with a third — no notebook required after day one.
@@ -526,8 +525,8 @@ The customer segmentation analysis reveals six distinct behavioural groups with 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/vikasnagar31>/telecom_segmentation.git
-cd telecom_segmentation
+git clone https://github.com/vikasnagar31/telecom_behavioral_segmentation-end-to-end.git
+cd telecom_behavioral_segmentation-end-to-end
 
 # 2. Create and activate a virtual environment
 python -m venv venv
